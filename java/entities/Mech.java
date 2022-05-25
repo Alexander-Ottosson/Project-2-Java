@@ -1,26 +1,27 @@
 package entities;
 
+import enums.PILOTS;
+
 public class Mech {
-    private int id;
+    private int mechId;
     private String make;
     private String model;
     private int year;
     private String color;
-    private Float maxSpeed;
-    private Float weight;
-    private Float height;
+    private Double maxSpeed;
+    private Double weight;
+    private Double height;
     private String description;
-    private int currentPilot;
-    private int pilotCount;
+    private PILOTS requiredPilots;
     private Boolean available;
-    private Boolean confidential;
+
 
     public Mech() {
         super();
     }
-    public Mech(int id, String make, String model, int year, String color, Float maxSpeed, Float weight, Float height,
-                String description, int currentPilot, int pilotCount, Boolean available, Boolean confidential) {
-            this.id = id;
+    public Mech(int mechId, String make, String model, int year, String color, Double maxSpeed, Double weight,
+                Double height, String description, PILOTS requiredPilots, Boolean available) {
+            this.mechId = mechId;
             this.make = make;
             this.model = model;
             this.year = year;
@@ -29,17 +30,16 @@ public class Mech {
             this.weight = weight;
             this.height = height;
             this.description = description;
-            this.currentPilot = currentPilot;
-            this.pilotCount = pilotCount;
+            this.requiredPilots = requiredPilots;
             this.available = available;
-            this.confidential = confidential;
+
 
     }
-    public int getId() {
-        return id;
+    public int getMechId() {
+        return mechId;
     }
-    public void setId(int id) {
-        this.id = id;
+    public void setMechId(int mechId) {
+        this.mechId = mechId;
     }
     public String getMake() {
         return make;
@@ -66,23 +66,23 @@ public class Mech {
     public void setColor(String color) {
         this.color = color;
     }
-    public Float getMaxSpeed() {
+    public Double getMaxSpeed() {
         return maxSpeed;
     }
-    public void setMaxSpeed(Float maxSpeed) {
+    public void setMaxSpeed(Double maxSpeed) {
         this.maxSpeed = maxSpeed;
     }
-    public Float getWeight() {
+    public Double getWeight() {
         return weight;
     }
-    public void setWeight(Float weight) {
+    public void setWeight(Double weight) {
         this.make = make;
     }
-    public Float getHeight() {
+    public Double getHeight() {
         return height;
     }
 
-    public void setHeight(Float height) {
+    public void setHeight(Double height) {
         this.height = height;
     }
     public String getDescription() {
@@ -91,28 +91,19 @@ public class Mech {
     public void setDescription(String description) {
         this.description = description;
     }
-    public int getCurrentPilot() {
-        return currentPilot;
+    public PILOTS getRequiredPilots() {
+        return requiredPilots;
     }
-    public void setCurrentPilot(int currentPilot) {
-        this.currentPilot = currentPilot;
+    public void setRequiredPilots(PILOTS requiredPilots) {
+
+        this.requiredPilots = requiredPilots;
     }
-    public int getPilotCount() {
-        return pilotCount;
-    }
-    public void setPilotCount(int pilotCount) {
-        this.pilotCount = pilotCount;
-    }
+
     public Boolean getAvailable() {
         return available;
     }
     public void setAvailable(Boolean available) {
         this.available = available;
     }
-    public Boolean getConfidential() {
-        return confidential;
-    }
-    public void setConfidential(Boolean confidential) {
-        this.confidential = confidential;
-    }
+
 }

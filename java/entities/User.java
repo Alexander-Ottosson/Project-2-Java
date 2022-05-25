@@ -1,28 +1,38 @@
 package entities;
 
+import enums.AUTHS;
+import enums.METHODS;
+
+import java.util.Objects;
+
 public class User {
-    private int id;
+    private int userId;
     private String username;
     private String password;
-    private Boolean isPilot;
-    private Boolean isAdmin;
+
+    private METHODS contact;
+
+    private String info;
+    private AUTHS role;
 
     public User() {
         super();
     }
-        public User(int Id, String username, String password, Boolean isPilot, Boolean isAdmin) {
+        public User(int userId, String username, String password, METHODS contact, String info, AUTHS role) {
         super();
-                this.id = id;
+                this.userId = userId;
                 this.username = username;
                 this.password =  password;
-                this.isPilot = isPilot;
-                this.isAdmin = isAdmin;
+                this.contact = contact;
+                this.info = info;
+                this.role = role;
+
         }
-        public int getId() {
-            return id;
+        public int getUserId() {
+            return userId;
         }
-        public void setId(int id) {
-            this.id = id;
+        public void setUserId(int userId) {
+            this.userId = userId;
         }
         public String getUsername() {
             return username;
@@ -37,18 +47,43 @@ public class User {
         public void setPassword(String password) {
             this.password = password;
        }
-        public Boolean getIsPilot() {
-            return isPilot;
+        public METHODS getContact() {
+        return contact;
+    }
+        public void setContact(METHODS contact) {
+        this.contact = contact;
+    }
+
+        public String getInfo() {
+        return info;
+    }
+        public void setInfo(String info) {
+        this.info = info;
+    }
+        public AUTHS getRole() {
+            return role;
         }
-        public void setIsPilot(Boolean isPilot) {
-            this.isPilot = isPilot;
+        public void setRole(AUTHS role) {
+            this.role = role;
         }
-        public Boolean getIsAdmin() {
-            return isAdmin;
-        }
-        public void setIsAdmin(Boolean isAdmin) {
-            this.isAdmin = isAdmin;
-        }
+
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getUserId(), getUsername(), getPassword(), getContact(), getInfo(), getRole());
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "userId=" + userId +
+                ", username='" + username + '\'' +
+                ", password=" + password +
+                ", contact=" + contact +
+                ", info=" + info +
+                ", role=" + role +
+                '}';
+    }
 
 }
 

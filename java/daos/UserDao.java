@@ -1,20 +1,23 @@
 package daos;
 import entities.User;
+import enums.AUTHS;
+import enums.METHODS;
+
 import java.sql.SQLException;
 import java.util.List;
 
 public interface UserDao {
 
-        public int createUser(User user) throws SQLException;
+        public User createUser(User user);
 
-        public User readUser(int id) throws SQLException;
+        public User readUser(int userId) ;
 
-        public List<User> readAllUsers() throws SQLException;
+        public List<User> readAllUsers() ;
 
-        public boolean updateUser(User user) throws SQLException;
+        public User updateUser(User change) ;
 
-        public boolean deleteUser(int id) throws SQLException;
+        public User deleteUser(int userId);
 
-        public User loginUser(String username, String password) throws SQLException;
+        public User loginUser(String username, String password);
     }
 

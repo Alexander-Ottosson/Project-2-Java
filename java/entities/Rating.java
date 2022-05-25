@@ -1,28 +1,32 @@
 package entities;
 
+import enums.STARS;
+
+import java.util.Objects;
+
 public class Rating {
-    private int id;
+    private int ratingId;
     private int userId;
     private int mechId;
-    private int stars;
+    private STARS stars;
     private String review;
 
     public Rating() {
         super();
     }
-        public Rating(int id, int userId, int mechId, int stars, String review) {
+        public Rating(int ratingId, int userId, int mechId, STARS stars, String review) {
         super();
-            this.id = id;
+            this.ratingId = ratingId;
             this.userId = userId;
             this.mechId = mechId;
             this.stars = stars;
             this.review = review;
         }
-    public int getId() {
-        return id;
+    public int getRatingId() {
+        return ratingId;
     }
-    public void setId(int id) {
-        this.id = id;
+    public void setRatingId(int ratingId) {
+        this.ratingId = ratingId;
     }
     public int getUserId() {
         return userId;
@@ -36,10 +40,10 @@ public class Rating {
     public void setMechId(int mechId) {
         this.mechId = mechId;
     }
-    public int getStars() {
+    public STARS getStars() {
         return stars;
     }
-    public void setStars(int stars) {
+    public void setStars(STARS stars) {
         this.stars = stars;
     }
     public String getReview() {
@@ -47,5 +51,21 @@ public class Rating {
     }
     public void setReview(String review) {
         this.review = review;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getRatingId(), getUserId(), getMechId(), getStars(), getReview());
+    }
+
+    @Override
+    public String toString() {
+        return "Rating{" +
+                "ratingId=" + ratingId +
+                ", userId='" + userId + '\'' +
+                ", mechId=" + mechId +
+                ", stars=" + stars +
+                ", review=" + review +
+                '}';
     }
 }
