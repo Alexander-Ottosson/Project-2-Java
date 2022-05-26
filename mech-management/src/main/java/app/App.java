@@ -16,7 +16,7 @@ public class App {
 
         establishRoutes(app);
 
-        app.start();
+        app.start(7000);
 }
     private static void establishRoutes(Javalin app) {
 
