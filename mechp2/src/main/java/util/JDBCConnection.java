@@ -13,9 +13,9 @@ public class JDBCConnection {
     public static Connection getConnection(){
         if (conn == null) {
             try{
-                FileInputStream input = new FileInputStream(Objects.requireNonNull(JDBCConnection.class.getClassLoader().getResource
-                        ("connection.properties")).getFile());
-                InputStream input2 = JDBCConnection.class.getClassLoader().getResourceAsStream
+//                FileInputStream input = new FileInputStream(Objects.requireNonNull(JDBCConnection.class.getClassLoader().getResource
+//                        ("connection.properties")).getFile());
+                InputStream input = JDBCConnection.class.getClassLoader().getResourceAsStream
                         ("connection.properties");
 
                 Properties props = new Properties();
